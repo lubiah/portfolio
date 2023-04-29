@@ -31,7 +31,9 @@ const config = {
 			gray: colors.neutral	
 		},
 		extend: {
-			
+			lineHeight: {
+				tighter: '1.15'
+			}
 		}
 	},
 
