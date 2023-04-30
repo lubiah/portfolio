@@ -1,5 +1,5 @@
 /* Write your global styles here, in PostCSS syntax */
-/* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=360&minRatio=1.125&maxFontSize=18&maxWidth=1536&maxRatio=1.2&steps=base%2Ch6%2Ch5%2Ch4%2Ch3%2Ch2%2Ch1&baseStep=base&prefix=font-size&decimals=2&remValue=16&previewFont=Inter */
+/* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=360&minRatio=1.125&maxFontSize=18&maxWidth=1536&maxRatio=1.2&steps=base%2Ch5%2Ch4%2Ch3%2Ch2%2Ch1&baseStep=base&prefix=font-size&decimals=2&useRems=on&previewFont=Inter */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,12 +7,11 @@
 
 :root {
     --font-size-base: clamp(1rem, 0.17vw + 0.96rem, 1.13rem);
-    --font-size-h6: clamp(1.13rem, 0.31vw + 1.06rem, 1.35rem);
-    --font-size-h5: clamp(1.27rem, 0.48vw + 1.16rem, 1.62rem);
-    --font-size-h4: clamp(1.42rem, 0.71vw + 1.26rem, 1.94rem);
-    --font-size-h3: clamp(1.6rem, 0.99vw + 1.38rem, 2.33rem);
-    --font-size-h2: clamp(1.8rem, 1.36vw + 1.5rem, 2.8rem);
-    --font-size-h1: clamp(2.03rem, 1.81vw + 1.62rem, 3.36rem);
+    --font-size-h5: clamp(1.13rem, 0.31vw + 1.06rem, 1.35rem);
+    --font-size-h4: clamp(1.27rem, 0.48vw + 1.16rem, 1.62rem);
+    --font-size-h3: clamp(1.42rem, 0.71vw + 1.26rem, 1.94rem);
+    --font-size-h2: clamp(1.6rem, 0.99vw + 1.38rem, 2.33rem);
+    --font-size-h1: clamp(1.8rem, 1.36vw + 1.5rem, 2.8rem);
 }
 
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
@@ -47,16 +46,26 @@
         font-size: var(--font-size-h5);
     }
 
-    h6 {
-        font-size: var(--font-size-h6);
-    }
-
     :--heading {
         @apply font-black tracking-tighter leading-tighter;
     }
 
     p {
         @apply my-[1em];
+    }
+
+    ol, ul {
+        padding-inline-start: 24px;
+    }
+
+    ol {
+        list-style: decimal;
+
+        & li {
+            &::marker {
+                @apply text-primary-500 font-medium;
+            }
+        }
     }
 
     figure {
