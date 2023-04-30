@@ -23,6 +23,7 @@
 	<img
 		src={data.metadata.image}
 		alt=""
+		loading="eager"
 		class="w-full h-auto max-h-[250px] tablet:max-h-[400px] laptop:object-cover mb-6 tablet:mb-8 laptop:mb-10 !col-[1/-1]"
 	/>
 	<ul
