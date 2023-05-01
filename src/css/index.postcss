@@ -1,8 +1,13 @@
-/* Write your global styles here, in PostCSS syntax */
+/* @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap'); */
+
 /* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=360&minRatio=1.125&maxFontSize=18&maxWidth=1536&maxRatio=1.2&steps=base%2Ch5%2Ch4%2Ch3%2Ch2%2Ch1&baseStep=base&prefix=font-size&decimals=2&useRems=on&previewFont=Inter */
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 
 :root {
@@ -47,16 +52,29 @@
     }
 
     :--heading {
-        @apply font-black tracking-tighter leading-tighter;
+        @apply font-black tracking-tighter leading-tighter  mt-[1em] mb-[0.2em];
     }
 
     p {
         @apply my-[1em];
     }
 
+    :is(:--heading, p) + :is(p) {
+		@apply mt-0;
+	}
+
+    :is(p, ol, ul) + :is(ol, ul) {
+        @apply mt-0;
+    }
+
     ol, ul {
         padding-inline-start: 24px;
+        @apply my-[0.5em]
     }
+
+    ul {
+		list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FD3026' width='16' height='16' viewBox='0 0 448 512'%3E%3C!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M245.8 45.9C241.9 37.4 233.4 32 224 32s-17.9 5.4-21.8 13.9L142.7 174.7 13.9 234.2C5.4 238.1 0 246.6 0 256s5.4 17.9 13.9 21.8l128.8 59.5 59.5 128.8c3.9 8.5 12.4 13.9 21.8 13.9s17.9-5.4 21.8-13.9l59.5-128.8 128.8-59.5c8.5-3.9 13.9-12.4 13.9-21.8s-5.4-17.9-13.9-21.8L305.3 174.7 245.8 45.9z'/%3E%3C/svg%3E");
+	}
 
     ol {
         list-style: decimal;
@@ -84,6 +102,48 @@
         }
     }
 
+    pre {
+		@apply my-[1em] p-2 overflow-x-auto whitespace-pre break-words tablet:rounded;
+	}
+
+    code:not(.torchlight) {
+		@apply before:content-['`'] after:content-['`'] break-words;
+	}
+
+    :is(:--heading) + :is(p) {
+        @apply mt-0;
+    }
+
+}
+
+
+    pre.torchlight *,
+code.torchlight * {
+	font-family: 'Fira Mono', Menlo, Monaco, 'Lucida Console', 'Courier New', Courier, monospace;
+	font-size: 16px;
+}
+
+pre.torchlight .line-number,
+pre.torchlight .summary-caret {
+	margin-right: 1rem;
+}
+
+/*
+  Blur and dim the lines that don't have the `.line-focus` class,
+  but are within a code block that contains any focus lines.
+*/
+.torchlight.has-focus-lines .line:not(.line-focus) {
+	transition: filter 0.35s, opacity 0.35s;
+	filter: blur(0.095rem);
+	opacity: 0.65;
+}
+
+/*
+  When the code block is hovered, bring all the lines into focus.
+*/
+.torchlight.has-focus-lines:hover .line:not(.line-focus) {
+	filter: blur(0px);
+	opacity: 1;
 }
 
 /* inter-regular - latin */
