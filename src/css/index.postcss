@@ -86,6 +86,14 @@
         }
     }
 
+    thead {
+        @apply bg-gray-50;
+    }
+
+    table,th, td {
+        @apply border border-color p-1;
+    }
+
     figure {
         @apply my-[0.5em];
 
@@ -114,6 +122,13 @@
         @apply mt-0;
     }
 
+}
+
+
+@layer utilities {
+    .border-color {
+        @apply border-gray-300;
+    }
 }
 
 
