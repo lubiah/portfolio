@@ -73,6 +73,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.2.0
     version: 3.2.0(postcss-load-config@4.0.1)(postcss@8.4.23)(svelte@3.58.0)
+  svelte-seo:
+    specifier: ^1.5.3
+    version: 1.5.3
   tailwindcss:
     specifier: ^3.1.5
     version: 3.3.2
@@ -3929,6 +3932,10 @@ packages:
       strip-indent: 3.0.0
       svelte: 3.58.0
       typescript: 5.0.4
+    dev: true
+
+  /svelte-seo@1.5.3:
+    resolution: {integrity: sha512-xkaVGNaQOWiNYApx6ehFSEVfdpfzy4pJLKWqQucFepl4SxJWcKDugCcND2k8bF4FskQ1M/4v4/Js35dDE/xFjg==}
     dev: true
 
   /svelte@3.58.0:
