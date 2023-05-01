@@ -13,7 +13,17 @@ const config = {
 			desktop: '1280px',
 			tv: '1536px'
 		},
-		
+		borderRadius: {
+			none: '0',
+			xxs: '0.125rem',
+			xs: '0.25rem',
+			sm: '0.375rem',
+			DEFAULT: '0.5rem',
+			md: '0.75rem',
+			lg: '1rem',
+			xl: '1.5rem',
+			full: '9999px'
+		},
 		colors: {
 			primary: {
 				50: '#FFF5F5',
