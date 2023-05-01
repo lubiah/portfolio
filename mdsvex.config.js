@@ -5,6 +5,7 @@ import remark_breaks from "remark-breaks";
 import remark_emoji from "remark-emoji";
 import remark_gfm from "remark-gfm";
 import remark_torchlight from "@kudadam/remark-torchlight";
+import remark_escape from "./remarkPlugins/escapeEntities/index.js";
 
 const config = defineConfig({
 	extensions: ['.md'],
@@ -25,7 +26,8 @@ const config = defineConfig({
 				theme: 'dracula',
 				cache: '.torchlight-cache'
 			}
-		}]
+		}],
+		remark_escape
 	],
 	rehypePlugins: []
 });
