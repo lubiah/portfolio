@@ -86,6 +86,10 @@
 			@apply pl-8;
 		}
 
+		& :global(li){
+			@apply my-0;
+		}
+
 		& :global(a) {
 			@apply pl-4 py-1 px-0.5 block transition-colors duration-300 border-l-2 hover:[&:not(.active)]:bg-gray-50;
 		}
