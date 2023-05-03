@@ -1,14 +1,9 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap'); */
-
 /* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=360&minRatio=1.125&maxFontSize=18&maxWidth=1536&maxRatio=1.2&steps=base%2Ch5%2Ch4%2Ch3%2Ch2%2Ch1&baseStep=base&prefix=font-size&decimals=2&useRems=on&previewFont=Inter */
-
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-
 
 :root {
     --font-size-base: clamp(1rem, 0.17vw + 0.96rem, 1.13rem);
@@ -20,7 +15,6 @@
 }
 
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
-
 
 @layer base {
 
@@ -52,24 +46,7 @@
     }
 
     :--heading {
-        @apply font-black tracking-tighter leading-tighter  mt-[1em] mb-[0.2em];
-    }
-
-    p {
-        @apply my-[1em];
-    }
-
-    :is(:--heading, p) + :is(p) {
-		@apply mt-0;
-	}
-
-    :is(p, ol, ul) + :is(ol, ul) {
-        @apply mt-0;
-    }
-
-    ol, ul {
-        padding-inline-start: 24px;
-        @apply my-[0.5em]
+        @apply font-black tracking-tighter leading-tighter;
     }
 
     ul {
@@ -95,12 +72,6 @@
     }
 
     figure {
-        @apply my-[0.5em];
-
-        & * {
-            @apply m-0 p-0;
-        }
-
         & img {
             @apply mx-auto;
         }
@@ -111,16 +82,12 @@
     }
 
     pre {
-		@apply my-[1em] p-2 overflow-x-auto whitespace-pre break-words tablet:rounded;
+		@apply p-2 overflow-x-auto whitespace-pre break-words tablet:rounded;
 	}
 
     code:not(.torchlight) {
 		@apply before:content-['`'] after:content-['`'] break-words;
 	}
-
-    :is(:--heading) + :is(p) {
-        @apply mt-0;
-    }
 
 }
 
@@ -214,4 +181,4 @@ pre.torchlight .summary-caret {
     font-weight: 900;
     src: url('/fonts/inter-v12-latin-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
          url('/fonts/inter-v12-latin-900.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
+}
