@@ -1,6 +1,7 @@
 ---
 title: Another Website Redesign, But with Sapper
 description: Migrating my website from HTML and PHP to Sapper, a JavaScript framework for building web apps
+image: https://ik.imagekit.io/kudadam/blog/another-redesign-sapper/hero
 excerpt: Finally, I re-designed my website with a framework called Svelte
 date: 2021-05-13
 tags:
