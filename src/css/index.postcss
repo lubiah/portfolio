@@ -89,7 +89,7 @@
 		@apply p-2 overflow-x-auto whitespace-pre break-words tablet:rounded;
 	}
 
-    code:not(.torchlight) {
+    code:not([class^='language']) {
 		@apply before:content-['`'] after:content-['`'] break-words;
 	}
 
@@ -102,8 +102,11 @@
     }
 }
 
+pre.torchlight {
+    padding: 16px 0px;
+}
 
-    pre.torchlight *,
+pre.torchlight *,
 code.torchlight * {
 	font-family: 'Fira Mono', Menlo, Monaco, 'Lucida Console', 'Courier New', Courier, monospace;
 	font-size: 16px;
