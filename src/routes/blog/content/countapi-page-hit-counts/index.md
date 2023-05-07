@@ -45,7 +45,7 @@ The API has endpoints which you use to store your data.
 
   ```
   https://api.countapi.xyz/get/test
-  => {"value":10096}
+  {"value":10096}
   ```
 
 - set
@@ -78,7 +78,7 @@ After adding all the existing data, it was now time to show the data inside the 
 
 Here's the code.
 
-```javascript
+```javascript {directory=src/routes/blog/[slug]/+page.svelte filename=+page.svelte}
 onMount(async () => {
 	//Get the page hits count from the api if the mode is production
 	if (mode === 'production') {
