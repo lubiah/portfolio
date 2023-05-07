@@ -4,7 +4,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+    
 :root {
     --font-size-base: clamp(1rem, 0.17vw + 0.96rem, 1.13rem);
     --font-size-h5: clamp(1.13rem, 0.31vw + 1.06rem, 1.35rem);
@@ -86,7 +86,7 @@
     }
 
     pre {
-		@apply p-2 overflow-x-auto whitespace-pre break-words tablet:rounded;
+		@apply overflow-x-auto whitespace-pre max-h-[700px] break-words;
 	}
 
     code:not([class^='language']) {
@@ -102,8 +102,50 @@
     }
 }
 
+.code-block-wrapper {
+    --header-colour: #191A21;
+    --editor-bg: #282A36;
+    & .code-block-title {
+        background-color: var(--header-colour);
+        color: white;
+        font-size: 16px;
+        padding: 4px 16px;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    & .code-block-directory {
+        font-size: 12px;
+        background-color: var(--editor-bg);
+        @apply text-gray-400;
+        padding: 0px 16px;
+    }
+
+    & .code-block-header {
+        background-color: var(--header-colour);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+
+        & .code-block-actions {
+            display: flex;
+            align-items: center;
+            padding: 4px 16px;
+            column-gap: 20px;
+        }
+
+        & .code-block-filename {
+            padding: 8px;
+            font-size: 14px;
+            width: min-content;
+            border-top: 0.5px solid #FF79C6;
+            background-color: var(--editor-bg);
+        }
+    }
+}
+
 pre.torchlight {
-    padding: 16px 0px;
+    padding: 16px;
 }
 
 pre.torchlight *,
