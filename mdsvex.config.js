@@ -6,6 +6,7 @@ import remark_emoji from "remark-emoji";
 import remark_gfm from "remark-gfm";
 import remark_torchlight from "@kudadam/remark-torchlight";
 import remark_escape from "./remarkPlugins/escapeEntities/index.js";
+import remark_editor from "./remarkPlugins/codeBlocks/index.js";
 
 const config = defineConfig({
 	extensions: ['.md'],
@@ -18,6 +19,7 @@ const config = defineConfig({
 		remark_slug,
 		remark_breaks,
 		remark_gfm,
+		remark_editor,
 		[remark_emoji, {
 			accessible: true
 		}],
