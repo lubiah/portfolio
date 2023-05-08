@@ -5,12 +5,12 @@ import parser from "md-attr-parser";
 const plugin = () => (tree)=>{
     visit(tree, 'code',(node,index,parent) => {
 
-        const { filename, directory } = (parser(node.meta ?? "")).prop;
+        const { filename, filepath } = (parser(node.meta ?? "")).prop;
         const lang = node.lang;
 
         const titleBar = makeTitleBar(lang);
         const header = makeHeader(filename);
-        const directoryHeader = makeDirectoryHeader(directory)
+        const directoryHeader = makeDirectoryHeader(filepath)
         const mainWrapper = {
             type: 'div',
             data: { hProperties: { class: 'code-block-wrapper' } },
@@ -18,8 +18,8 @@ const plugin = () => (tree)=>{
           };
 
           if (lang) mainWrapper.children.push(titleBar);
-          if (filename) mainWrapper.children.push(header);
-          if (directory) mainWrapper.children.push(directoryHeader);
+          mainWrapper.children.push(header);
+          if (filepath) mainWrapper.children.push(directoryHeader);
           mainWrapper.children.push(node);
          
         

@@ -28,13 +28,13 @@ export const makeTitleBar = (language = '') => {
 *  }[]
 * }} An object describing a DOM element, including its type, data, and children.
 */
-export const makeHeader = (fileName = "") => {
+export const makeHeader = (filename) => {
    const fileNameContainer = {
        type: 'div',
        data: {
            hProperties: { class: 'code-block-filename'}
        },
-       children: [{type: 'span', value: fileName }]
+       children: [{type: 'span', value: filename }]
    }
 
    const actionButtonsWrapper = {
@@ -61,22 +61,25 @@ export const makeHeader = (fileName = "") => {
    const wrapper =  {
        type: 'div',
        data: {
-           hProperties: { class: 'code-block-header' }
+           hProperties: {
+             class: 'code-block-header',
+             style: `${filename == undefined ? 'justify-content:end': ''}` 
+            }
        },
        children: []
    }
 
-   if (fileName) wrapper.children.push(fileNameContainer);
+   if (filename) wrapper.children.push(fileNameContainer);
    wrapper.children.push(actionButtonsWrapper)
 
    return wrapper;
 }
 
 
-export const makeDirectoryHeader = (directory) => {
-    const transformedDirectory = directory.split("/").join(" > ");
+export const makeDirectoryHeader = (filepath = '') => {
+    const transformedfilepath = filepath.split("/").join(" > ");
     return {
         type: 'html',
-        value: `<div class='code-block-directory'>${transformedDirectory}</div>`
+        value: `<div class='code-block-directory'>${transformedfilepath}</div>`
     }
 }
