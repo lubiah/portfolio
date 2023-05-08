@@ -39,7 +39,7 @@ As I said earlier, installing Cusdis is very easy. Just head over to their websi
 
 On this site, my blog posts page is on `src/routes/blog/[slug]/+page.svelte`, and this is how I inserted Cusdis into my website.
 
-```svelte {filename=+page.svelte directory=src/routes/blog/[slug]/+page.svelte}
+```svelte {filename=+page.svelte filepath=src/routes/blog/[slug]/+page.svelte}
 <article>
 <div>
 <!-- article content -->

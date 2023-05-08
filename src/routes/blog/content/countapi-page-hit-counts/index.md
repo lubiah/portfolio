@@ -78,7 +78,7 @@ After adding all the existing data, it was now time to show the data inside the 
 
 Here's the code.
 
-```javascript {directory=src/routes/blog/[slug]/+page.svelte filename=+page.svelte}
+```javascript {filepath=src/routes/blog/[slug]/+page.svelte filename=+page.svelte}
 onMount(async () => {
 	//Get the page hits count from the api if the mode is production
 	if (mode === 'production') {
