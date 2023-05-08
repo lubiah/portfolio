@@ -71,8 +71,8 @@
 		@apply col-[2/3] laptop:col-[1/2];
 	}
 
-	article :global(pre) {
-		@apply col-[1/4] laptop:col-[1/2];
+	article :global(.code-block-wrapper) {
+		@apply col-[1/-1] laptop:col-[1/2];
 	}
 
 	nav.toc {
