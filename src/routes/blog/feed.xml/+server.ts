@@ -1,17 +1,8 @@
 import type { RequestHandler } from "@sveltejs/kit";
 import { getArticlesHTML } from "..";
-import { encodeHtml } from "$utils";
+import  { encodeHtml } from "$utils";
 
-const generateItems = (articles:{
-	title: string,
-	description: string,
-	image: string,
-	date: Date,
-	excerpt: string,
-	tags: string[],
-	html: string,
-	slug: string
-}[]):string=>{
+const generateItems = (articles: any[]):string=>{ 
     let items = '';
     articles.forEach(article => {
         items += 
@@ -23,7 +14,7 @@ const generateItems = (articles:{
     <guid>https://www.kudadam.com/blog/${article.slug}</guid>
     <pubDate>${article.date}</pubDate>
 </item>
-`
+`.trim()
     });
     return items;
 }
@@ -39,7 +30,15 @@ export const GET = (async ()=>{
         <title>Kudadam's Blog</title>
         <link>https://wwww.kudadam.com/blog</link>
         <description>Articles</description>
+        ${rssItems}
     </channel>
-    `
+    </rss>
+    `.trim();
+
+    return new Response(rssTemplate, {
+        headers: {
+            "Content-Type": "application/xml"
+        }
+    })
 
 }) satisfies RequestHandler;
