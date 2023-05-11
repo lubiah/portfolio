@@ -63,6 +63,85 @@ In your `src/routes/` folder, create a folder whose name will be the path to you
 
 So this is how I created my endpoint, explanations are below.
 
-```javascript
+```typescript {filename=+server.js filepath=src/routes/blog/feed.xml/+server.js}
+import { getArticlesHTML } from "..";
+import { encodeHtml } from "$utils";
+
+const generateItems = (articles) => { // [tl! collapse:start]
+  let items = "";
+  articles.forEach((article) => {
+    items += `
+      <item>
+        <title>${article.title}</title>
+        <link>https://www.kudadam.com/blog/${article.slug}</link>
+        <description>${encodeHtml(article.html)}</description>
+        <guid>https://www.kudadam.com/blog/${article.slug}</guid>
+        <pubDate>${article.date}</pubDate>
+      </item>
+    `.trim();
+  });
+  return items; // [tl! collapse:end]
+}; 
+
+export const GET = async () => {
+  const articles = await getArticlesHTML();
+  const rssItems = generateItems(articles);
+  const rssTemplate = `
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0">
+      <channel>
+        <title>Kudadam's Blog</title>
+        <link>https://wwww.kudadam.com/blog</link>
+        <description>Articles</description>
+        ${rssItems}
+      </channel>
+    </rss>
+  `.trim();
+
+  return new Response(rssTemplate, {
+    headers: {
+      "Content-Type": "application/xml",
+    },
+  });
+};
+
 ```
 
+
+
+Now, let's go over the code we wrote.
+
+1. We used the `GET` handler since we are retrieving content from the server.
+
+2. Then, we retrieved all our articles from an asynchronous function named `getArticlesHTML`.
+
+   This function returns a JSON which contains articles in this format.
+
+   ```typescript
+   interface getArticlesHTML {
+   	title: string,
+   	description?: string,
+   	image?: string,
+   	date: Date,
+   	excerpt?: string,
+   	tags?: string[],
+   	html: string,
+   	slug: string
+   }[]
+   ```
+
+   No big deal if you don't understand Typescript. All what I'm trying to say is that the function returns an array of objects with these properties. The optional properties are the ones with the `?` and the required ones are the ones without it. In order for your code to work with mine, it doesn't matter where you're pulling your data from. The returned data types should match mine.
+
+3. The next function `generateItems` takes the array returned from `getArticlesHTML` and converts it into it's RSS equivalent form.
+   It iterates over each object and converts the required fields to it's RSS equivalent. The `encodeHtml` function encodes the entities in the HTML (converting  '<', and '>' to `&#60;` and `&#62;` )
+
+4. We finally insert the RSS equivalent of the contents into the RSS template which we have generated with the `rssTemplate` variable.
+   Do not forget the `.trim()` method because the document will not display if there are spaces before the declaration of the tags.
+
+5. We return the results as a response and set the content type as 'application/xml'. It's important to set the content type so that the browser won't interpret it as an HTML file. 
+
+## Wrapping up
+
+If you're to head localhost:5173/blog/feed.xml, you will see the RSS displaying lively without any errors. If you want to customize your RSS more, there are more tags you can add to it.
+
+Also, I wanted people visiting my feed through this URL (localhost:5173/blog/feed.xml) to also access it when they visited localhost:5173/blog/feed so I made a redirect to allow that. I will write about it soon.
