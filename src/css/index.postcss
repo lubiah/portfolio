@@ -64,7 +64,7 @@
     }
 
     ol, ul {
-        padding-inline-start: 28px;
+        padding-inline-start: 20px;
     }
 
     thead {
@@ -92,6 +92,10 @@
     code:not([class^='language']) {
 		@apply before:content-['`'] after:content-['`'] break-words;
 	}
+
+    a {
+        @apply break-words;
+    }
 
 }
 
