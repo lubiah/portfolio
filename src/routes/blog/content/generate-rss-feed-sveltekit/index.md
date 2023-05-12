@@ -133,7 +133,7 @@ Now, let's go over the code we wrote.
    No big deal if you don't understand Typescript. All what I'm trying to say is that the function returns an array of objects with these properties. The optional properties are the ones with the `?` and the required ones are the ones without it. In order for your code to work with mine, it doesn't matter where you're pulling your data from. The returned data types should match mine.
 
 3. The next function `generateItems` takes the array returned from `getArticlesHTML` and converts it into it's RSS equivalent form.
-   It iterates over each object and converts the required fields to it's RSS equivalent. The `encodeHtml` function encodes the entities in the HTML (converting  '<', and '>' to `&#60;` and `&#62;` )
+   It iterates over each object and converts the required fields to it's RSS equivalent. The `encodeHtml` function encodes the entities in the HTML (converting  '<', and '>' to  "\&#60;" and  '\&#62'; )
 
 4. We finally insert the RSS equivalent of the contents into the RSS template which we have generated with the `rssTemplate` variable.
    Do not forget the `.trim()` method because the document will not display if there are spaces before the declaration of the tags.
