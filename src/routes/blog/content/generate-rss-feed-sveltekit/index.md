@@ -63,7 +63,7 @@ In your `src/routes/` folder, create a folder whose name will be the path to you
 
 So this is how I created my endpoint, explanations are below.
 
-```typescript {filename=+server.js filepath=src/routes/blog/feed.xml/+server.js}
+```javascript {filename=+server.js filepath=src/routes/blog/feed.xml/+server.js}
 import { getArticlesHTML } from "..";
 import { encodeHtml } from "$utils";
 
