@@ -1,12 +1,18 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 
+	export let data: PageData;
+
 	import ClockIcon from '$icons/clock.svg?component';
 	import CalendarIcon from '$icons/calendar.svg?component';
 	import tocSpy from './tocSpy';
+	import Head from "svelte-seo";
 	import { onMount } from 'svelte';
 
-	export let data: PageData;
+	const SEO = {
+		title: `${data.metadata.title} • Kudadam`,
+		description: data.metadata.description
+	}
 
 	onMount(async () => {
 		const article = document.querySelector('article');
@@ -15,6 +21,11 @@
 		}
 	});
 </script>
+
+<Head
+	title= {SEO.title}
+	description = {SEO.description}
+/>
 
 <main class="max-w-screen-laptop mx-auto min-w-0">
 	<h1 class="mb-12 tablet:mb-16 laptop:mb-20 laptop:!col-[1/-1] mx-4 laptop:mx-0">
