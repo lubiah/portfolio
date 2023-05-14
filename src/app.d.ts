@@ -11,6 +11,7 @@ declare global {
 
 declare interface BlogPost {
 	title: string;
+	description: string;
 	excerpt: string;
 	readingTime: string;
 	image: string;
