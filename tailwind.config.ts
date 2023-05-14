@@ -25,6 +25,7 @@ const config = {
 			full: '9999px'
 		},
 		colors: {
+			white: 'white',
 			primary: {
 				50: '#FFF5F5',
 				100: '#FFE6E6',
