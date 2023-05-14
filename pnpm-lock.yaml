@@ -88,6 +88,9 @@ devDependencies:
   svelte-seo:
     specifier: ^1.5.3
     version: 1.5.3
+  svg-pan-zoom:
+    specifier: ^3.6.1
+    version: 3.6.1
   tailwindcss:
     specifier: ^3.3.2
     version: 3.3.2
@@ -4389,6 +4392,10 @@ packages:
   /svelte@3.59.1:
     resolution: {integrity: sha512-pKj8fEBmqf6mq3/NfrB9SLtcJcUvjYSWyePlfCqN9gujLB25RitWK8PvFzlwim6hD/We35KbPlRteuA6rnPGcQ==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /svg-pan-zoom@3.6.1:
+    resolution: {integrity: sha512-JaKkGHHfGvRrcMPdJWkssLBeWqM+Isg/a09H7kgNNajT1cX5AztDTNs+C8UzpCxjCTRrG34WbquwaovZbmSk9g==}
     dev: true
 
   /svgo@3.0.2:
