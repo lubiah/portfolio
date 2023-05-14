@@ -15,6 +15,7 @@
 	},
 	"devDependencies": {
 		"@kudadam/remark-torchlight": "^0.0.2",
+		"@mermaid-js/mermaid-cli": "^10.1.0",
 		"@playwright/test": "^1.33.0",
 		"@poppanator/sveltekit-svg": "^3.0.0",
 		"@sveltejs/adapter-auto": "^2.0.1",
