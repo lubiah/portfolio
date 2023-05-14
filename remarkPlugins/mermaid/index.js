@@ -23,7 +23,11 @@ const plugin = () => async (tree) =>{
             const tempFile = path.join(os.tmpdir(),'temporary.mmd');
             const outputFile = path.join(os.tmpdir(),'temporary.svg');
             fs.writeFileSync(tempFile,value);
-            await run(tempFile, outputFile);
+            await run(tempFile, outputFile,{
+                puppeteerConfig: {
+                    args: ['--no-sandbox', '--disable-setuid-sandbox']
+                }
+            });
 
             const mermaidSvg = fs.readFileSync(outputFile,'utf-8');
             const mermaidElement = { type: 'html', value: mermaidSvg };
