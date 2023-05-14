@@ -107,6 +107,21 @@
     }
 }
 
+.mermaid-diagram {
+
+    & .mermaid-bottom {
+        @apply flex justify-end;
+    }
+
+    & .mermaid-controls {
+        @apply flex gap-x-1;
+
+        & .mermaid-button {
+            @apply border rounded border-gray-500 p-[6px];
+        }
+    }
+}
+
 .code-block-wrapper {
     --header-colour: #191A21;
     --editor-bg: #282A36;
