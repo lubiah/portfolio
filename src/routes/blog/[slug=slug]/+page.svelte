@@ -15,10 +15,11 @@
 	}
 
 	onMount(async () => {
-		const article = document.querySelector('article');
-		if (article) {
-			tocSpy(article);
-		}
+		const article: HTMLElement| null = document.querySelector('article');
+		if (article) tocSpy(article);
+		const mermaidBlocks: HTMLElement | null = document.querySelectorAll('.mermaid-diagram');
+		const panZoom = await import("./panZoom").then(module => module.default);
+		mermaidBlocks.forEach(block => panZoom(block))
 	});
 </script>
 
