@@ -11,7 +11,7 @@ date: 2021-07-18
 
 Before I knew about RSS (Really Simple Syndicate), this was how I used to stay updated with my favourite websites. I will bookmark the website, and then every once in a while, I will go to the website and see if they have posted new content. Well I know😂, this was tiring because I always needed to check up on the websites once in a while.
 
-Fast forward, I came to learn about RSS and it's what I've been using since. Currently, I use the [Inoreader app](inoreader.com). With it, I organize all my favourite feeds and whenever any of them updates their content, I get a notification. I'm not going to dive into how RSS works, I do believe you know how it works and we are going to look at how to incorporate it into our SvelteKit website.
+Fast forward, I came to learn about RSS and it's what I've been using since. Currently, I use the [Inoreader app](https://www.inoreader.com). With it, I organize all my favourite feeds and whenever any of them updates their content, I get a notification. I'm not going to dive into how RSS works, I do believe you know how it works and we are going to look at how to incorporate it into our SvelteKit website.
 
 ## Basic structure of an RSS feed 
 
