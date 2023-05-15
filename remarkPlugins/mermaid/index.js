@@ -7,7 +7,7 @@ import FileCache from "./cache.js";
 
 
 
-const plugin = () =>  (tree,file) =>{
+const plugin = () =>  async (tree,file) =>{
     const { filename } = file;
     const blocks = [];
 
@@ -27,7 +27,7 @@ const plugin = () =>  (tree,file) =>{
                 const tempFile = path.join(os.tmpdir(),'temporary.mmd');
                 const outputFile = path.join(os.tmpdir(),'temporary.svg');
                 fs.writeFileSync(tempFile,value);
-                 run(tempFile, outputFile,{
+                 await run(tempFile, outputFile,{
                     puppeteerConfig: {
                         args: ['--no-sandbox', '--disable-setuid-sandbox']
                     }
