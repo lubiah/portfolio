@@ -3,35 +3,46 @@ import { run } from "@mermaid-js/mermaid-cli";
 import fs from "fs";
 import os from "os";
 import path from "path";
+import FileCache from "./cache.js";
 
 
 
-const plugin = () => async (tree) =>{
-
+const plugin = () =>  (tree,file) =>{
+    const { filename } = file;
     const blocks = [];
-    const promises = [];
 
     visit(tree, { type: 'code', lang: 'mermaid' },(node,index,parent)=>{
         blocks.push({ node, index, parent });
     });
 
     for (const block of blocks){
-        let promise = new Promise(async (resolve)=>{
             const { node, index, parent } = block;
             const { value } = node;
-            const tempFile = path.join(os.tmpdir(),'temporary.mmd');
-            const outputFile = path.join(os.tmpdir(),'temporary.svg');
-            fs.writeFileSync(tempFile,value);
-            await run(tempFile, outputFile,{
-                puppeteerConfig: {
-                    args: ['--no-sandbox', '--disable-setuid-sandbox']
-                }
-            });
+   
+            const Cache = new FileCache(".mermaid-cache");
+            const key = Cache.getCacheKey(filename,value);
+            const cached = Cache.getCachedResults(key);
+            let mermaidSvg;
+            if (!cached){
+                const tempFile = path.join(os.tmpdir(),'temporary.mmd');
+                const outputFile = path.join(os.tmpdir(),'temporary.svg');
+                fs.writeFileSync(tempFile,value);
+                 run(tempFile, outputFile,{
+                    puppeteerConfig: {
+                        args: ['--no-sandbox', '--disable-setuid-sandbox']
+                    }
+                });
+                mermaidSvg = fs.readFileSync(outputFile,'utf-8');
+                Cache.cacheResults(key,mermaidSvg);
+                fs.unlinkSync(tempFile.toString());
+                fs.unlinkSync(outputFile.toString());
+            }
+            
+            else {
+                mermaidSvg = cached;
+            }
 
-            const mermaidSvg = fs.readFileSync(outputFile,'utf-8');
 
-            fs.unlinkSync(tempFile.toString());
-            fs.unlinkSync(outputFile.toString());
 
             const mermaidElement = { type: 'html', value: mermaidSvg };
             const controls = {
@@ -61,13 +72,9 @@ const plugin = () => async (tree) =>{
                 children: [mermaidElement,controls]
               };
             parent.children[index] = mainWrapper;
-            resolve();
-        });
-        promises.push(promise);
+            }
+        }
         
-    }
-
-    await Promise.all(promises);
-}
+    
 
 export default plugin;

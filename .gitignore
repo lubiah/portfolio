@@ -4,6 +4,7 @@ node_modules
 /.svelte-kit
 /package
 /.torchlight-cache
+/.mermaid-cache
 .env
 .env.*
 !.env.example
