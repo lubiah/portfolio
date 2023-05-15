@@ -20,7 +20,7 @@ const config = defineConfig({
 		remark_slug,
 		remark_breaks,
 		remark_gfm,
-		remark_mermaid,
+		//remark_mermaid,
 		remark_editor,
 		[remark_emoji, {
 			accessible: true
