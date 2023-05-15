@@ -9,6 +9,7 @@ const plugin = (node: HTMLElement) =>  {
     const zoom = panZoom(svgElement,{
         fit: true,
         center: true,
+        controlIconsEnabled: true 
     });
 
     const { width, height } = zoom.getSizes();
