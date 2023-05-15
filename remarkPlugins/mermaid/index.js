@@ -11,8 +11,7 @@ const plugin = () => async (tree) =>{
     const blocks = [];
     const promises = [];
 
-    visit(tree, 'code',(node,index,parent)=>{
-        if (node.lang !== 'mermaid') return;
+    visit(tree, { type: 'code', lang: 'mermaid' },(node,index,parent)=>{
         blocks.push({ node, index, parent });
     });
 
@@ -30,6 +29,10 @@ const plugin = () => async (tree) =>{
             });
 
             const mermaidSvg = fs.readFileSync(outputFile,'utf-8');
+
+            fs.unlinkSync(tempFile.toString());
+            fs.unlinkSync(outputFile.toString());
+
             const mermaidElement = { type: 'html', value: mermaidSvg };
             const controls = {
                 type: 'html',
