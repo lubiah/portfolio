@@ -4,7 +4,7 @@ const postcssPresetEnv = require("postcss-preset-env");
 
 const config = {
 	plugins: [
-		require('tailwindcss/nesting')(require('postcss-nesting')),
+		require('tailwindcss/nesting'),
 		postcssPresetEnv({
 			stage: 1,
 			features: {
