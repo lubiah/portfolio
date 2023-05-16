@@ -1,8 +1,8 @@
-import { getArticlesList } from './';
+import {getArticlesMetadata } from './';
 import type { PageServerLoad } from './$types';
 
 export const load = (async () => {
-	const articles = await getArticlesList();
+	const articles = await getArticlesMetadata();
 	return {
 		articles
 	};
