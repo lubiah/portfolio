@@ -9,7 +9,7 @@ declare global {
 	}
 }
 
-declare interface BlogPost {
+declare interface ArticleMeta {
 	title: string;
 	description: string;
 	excerpt: string;
