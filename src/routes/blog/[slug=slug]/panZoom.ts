@@ -8,6 +8,7 @@ const plugin = (node: HTMLElement) =>  {
 
     const zoom = panZoom(svgElement,{
         fit: true,
+        zoomEnabled: true,
         center: true
     });
 
@@ -26,6 +27,16 @@ const plugin = (node: HTMLElement) =>  {
     zoomOutButton.addEventListener('click',()=>{
         zoom.zoomOut();
     })
+
+    const resize = ()=>{
+   
+        zoom.resize();
+        zoom.fit();
+        zoom.center();
+     
+    }
+
+    window.addEventListener('resize',resize);
 
 
 }

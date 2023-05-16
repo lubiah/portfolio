@@ -108,16 +108,16 @@
 }
 
 .mermaid-diagram {
-
+    @apply relative p-1;
     & .mermaid-bottom {
         @apply flex justify-end;
     }
 
     & .mermaid-controls {
-        @apply flex gap-x-1;
+        @apply flex flex-col  gap-y-1 mt-1 absolute bottom-1;
 
         & .mermaid-button {
-            @apply border rounded border-gray-500 p-[6px];
+            @apply border rounded border-gray-500 p-[6px] bg-white;
         }
     }
 }
