@@ -7,6 +7,7 @@ import remark_gfm from "remark-gfm";
 import remark_torchlight from "@kudadam/remark-torchlight";
 import remark_escape from "./remarkPlugins/escapeEntities/index.js";
 import remark_editor from "./remarkPlugins/codeBlocks/index.js";
+import remark_readingTime from "./remarkPlugins/readingTime/index.js";
 import remark_mermaid from "./remarkPlugins/mermaid/index.js"
 
 const config = defineConfig({
@@ -22,6 +23,7 @@ const config = defineConfig({
 		remark_gfm,
 		remark_mermaid,
 		remark_editor,
+		remark_readingTime,
 		[remark_emoji, {
 			accessible: true
 		}],
