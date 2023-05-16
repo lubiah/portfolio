@@ -17,7 +17,7 @@
 	onMount(async () => {
 		const article: HTMLElement| null = document.querySelector('article');
 		if (article) tocSpy(article);
-		const mermaidBlocks: HTMLElement | null = document.querySelectorAll('.mermaid-diagram');
+		const mermaidBlocks: NodeListOf<HTMLElement> | null = document.querySelectorAll('.mermaid-diagram');
 		const panZoom = await import("./panZoom").then(module => module.default);
 		mermaidBlocks.forEach(block => panZoom(block))
 	});
@@ -42,7 +42,7 @@
 		class="text-gray-500 mb-6 tablet:mb-8 laptop:mb-10 text-xs laptop:text-base flex flex-col tablet:flex-row gap-2 tablet:gap-x-6 mx-4 laptop:mx-0 p-0"
 	>
 		<li class="flex items-center gap-x-1">
-			<ClockIcon height="16" width="16" /><span>{data.metadata.readingTime}</span>
+			<ClockIcon height="16" width="16" /><span>{data.metadata.readingTime.text}</span>
 		</li>
 		<li class="flex items-center gap-x-1">
 			<CalendarIcon height="16" width="16" /><time
