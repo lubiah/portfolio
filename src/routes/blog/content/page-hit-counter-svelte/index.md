@@ -8,7 +8,10 @@ tags:
   - svelte
   - javascript
   - sqlite3
+draft: true
 ---
+
+<!--TODO: Rewrite this article later-->
 
 My website now has a page hit counter which I recently installed. I added it directly to my blog section. This allows me to know how many times my blog posts have been viewed as well as which blog posts are popular. Today, I decided to jot down everything I did.
 
@@ -49,7 +52,8 @@ graph TD
     end
 ```
 
-That's a pretty large diagram explaining all what we will be doing
+That's a pretty large diagram explaining all what we will be doing. Let me describe the process real quick.
+When the user visits any blog post, we extract the I.P address and then we get the hash of the I.P address. Next, we check if the hashed value is inside the database for that particular blog post. If it is in, it means the user has visited that blog post before so we don't update our database. We just return the number of hashed I.P addresses excluding the current one. If the hashed I.P is not in the database, it means this is the first time the user is visiting so we 
 
 ## Directory Structure
 
