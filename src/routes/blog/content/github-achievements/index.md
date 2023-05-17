@@ -21,8 +21,6 @@ GitHub achievements were created to recognise the efforts of these developers.
 The image above depicts the first-ever GitHub achievement badge. It was exciting to see some developers with these badges. Simply seeing a developer with one of these badges meant he had contributed to something great, like a seasoned pro. This badge was released alongside two others.
 The "Artic Code Vault" badge, as well as a badge for those who sponsor open-source projects through Github sponsors.
 
----
-
 The point is that these badges were valuable and difficult to obtain. Only the worthy possessed them, and to be awarded any of these badges, one had to work hard or accomplish something extraordinary.
 They were difficult to obtain, making it worthwhile to fight for them. I wanted one of those badges back then, but I knew I had to do something deserving to get one.
 Then my dreams came true, but not in the way I had hoped.
