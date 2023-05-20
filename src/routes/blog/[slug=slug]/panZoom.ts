@@ -6,12 +6,13 @@ const plugin = (node: HTMLElement) =>  {
     const zoomInButton: HTMLElement = node.querySelector('[data-action=zoom-in]')!;
     const zoomOutButton: HTMLElement = node.querySelector('[data-action=zoom-out]')!;
 
+
     const zoom = panZoom(svgElement,{
         fit: true,
         zoomEnabled: true,
         center: true
     });
-
+    
     const { width, height } = zoom.getSizes();
     svgElement.style.width = width.toString();
     svgElement.style.height = height.toString();
@@ -29,10 +30,10 @@ const plugin = (node: HTMLElement) =>  {
     })
 
     const resize = ()=>{
-   
         zoom.resize();
         zoom.fit();
         zoom.center();
+        zoom.reset();
      
     }
 

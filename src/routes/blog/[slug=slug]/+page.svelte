@@ -7,6 +7,7 @@
 	import CalendarIcon from '$icons/calendar.svg?component';
 	import tocSpy from './tocSpy';
 	import Head from "svelte-seo";
+	import Progress from "svelte-scrollprogress";
 	import { onMount } from 'svelte';
 
 	const SEO = {
@@ -19,7 +20,8 @@
 		if (article) tocSpy(article);
 		const mermaidBlocks: NodeListOf<HTMLElement> | null = document.querySelectorAll('.mermaid-diagram');
 		const panZoom = await import("./panZoom").then(module => module.default);
-		mermaidBlocks.forEach(block => panZoom(block))
+		mermaidBlocks.forEach(block => panZoom(block));
+		
 	});
 </script>
 
@@ -56,7 +58,7 @@
 		</li>
 	</ul>
 	<div class="laptop:flex justify-between">
-		<article>
+		<article class='prose'>
 			<svelte:component this={data.component} />
 		</article>
 		{#if data.toc}
@@ -69,6 +71,7 @@
 		{/if}
 	</div>
 </main>
+<Progress color="#ED0101"/>
 
 <style lang="postcss">
 	article {
@@ -83,7 +86,7 @@
 		@apply col-[2/3] laptop:col-[1/2];
 	}
 
-	article :global(.code-block-wrapper) {
+	article :global(.code-block-wrapper), article :global(pre) {
 		@apply col-[1/-1] laptop:col-[1/2];
 	}
 
