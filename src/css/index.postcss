@@ -1,6 +1,8 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap'); */
 /* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=360&minRatio=1.125&maxFontSize=18&maxWidth=1536&maxRatio=1.2&steps=base%2Ch5%2Ch4%2Ch3%2Ch2%2Ch1&baseStep=base&prefix=font-size&decimals=2&useRems=on&previewFont=Inter */
 
+@import "./prose-marginCollapse.postcss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -67,6 +69,10 @@
         padding-inline-start: 20px;
     }
 
+    img {
+        @apply w-full h-auto;
+    }
+
     thead {
         @apply bg-gray-50;
     }
@@ -90,7 +96,7 @@
 	}
 
     code:not([class^='language']) {
-		@apply before:content-['`'] after:content-['`'] break-words;
+		@apply before:content-['`'] after:content-['`'] break-words text-[color:#024F04];
 	}
     
 
@@ -108,14 +114,9 @@
 }
 
 .mermaid-diagram {
-    @apply relative p-1;
-    & .mermaid-bottom {
-        @apply flex justify-end;
-    }
-
+    @apply border p-1 rounded;
     & .mermaid-controls {
-        @apply flex flex-col  gap-y-1 mt-1 absolute bottom-1;
-
+        @apply flex justify-end gap-x-1;
         & .mermaid-button {
             @apply border rounded border-gray-500 p-[6px] bg-white;
         }
@@ -162,6 +163,11 @@
             background-color: var(--editor-bg);
         }
     }
+}
+
+pre {
+    font-family: 'Fira Mono', Menlo, Monaco, 'Lucida Console', 'Courier New', Courier, monospace;
+	font-size: 16px;
 }
 
 pre.torchlight {
@@ -251,3 +257,13 @@ pre.torchlight .summary-caret {
     src: url('/fonts/inter-v12-latin-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
          url('/fonts/inter-v12-latin-900.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
+/* fira-mono-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Fira Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/fira-mono-v14-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+         url('/fonts/fira-mono-v14-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
