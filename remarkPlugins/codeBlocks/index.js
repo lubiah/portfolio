@@ -5,7 +5,9 @@ import parser from "md-attr-parser";
 const plugin = () => (tree)=>{
     visit(tree, 'code',(node,index,parent) => {
 
-        const { filename, filepath } = (parser(node.meta ?? "")).prop;
+        const { filename, filepath, no_frame } = (parser(node.meta ?? "")).prop;
+
+        if (no_frame) return;
         const lang = node.lang;
 
         const titleBar = makeTitleBar(lang);
