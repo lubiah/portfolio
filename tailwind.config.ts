@@ -26,6 +26,8 @@ const config = {
 		},
 		colors: {
 			white: 'white',
+			black: 'black',
+			transparent: 'transparent',
 			primary: {
 				50: '#FFF5F5',
 				100: '#FFE6E6',
