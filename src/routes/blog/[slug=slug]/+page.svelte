@@ -75,7 +75,7 @@
 
 <style lang="postcss">
 	article {
-		@apply grid grid-cols-[1fr_min(65ch,calc(100%-32px))_1fr] laptop:grid-cols-[65ch_1fr];
+		@apply grid grid-cols-[1fr_min(65ch,calc(100%-32px))_1fr] laptop:grid-cols-[65ch_1fr] mb-[60px];
 
 		& > :global(:first-child) {
 			@apply mt-0;
