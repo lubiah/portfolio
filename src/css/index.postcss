@@ -174,10 +174,28 @@ pre.torchlight {
     padding: 16px;
 }
 
+
 pre.torchlight *,
 code.torchlight * {
 	font-family: 'Fira Mono', Menlo, Monaco, 'Lucida Console', 'Courier New', Courier, monospace;
 	font-size: 16px;
+
+    & details summary {
+        @apply bg-[#16171e] w-screen;
+
+        & > .line > .line-number::after {
+            @apply text-gray-500 ml-1.5 content-['_▷'];
+        }
+        
+    }
+
+    & details[open] summary{
+        @apply bg-transparent;
+
+        & > .line > .line-number::after {
+            @apply content-['_▼']
+        }
+    }
 }
 
 pre.torchlight .line-number,
