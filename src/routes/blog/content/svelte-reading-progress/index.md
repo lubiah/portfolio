@@ -83,8 +83,9 @@ That's all for the JavaScript part, let's move on to HTML.
 ## The HTML
 
 <!--FIXME: Change the language to HTML later-->
-```html
-<div class="svelte-scrollprogress-container {position}" style:--ssp-background={background}> <!--  [tl! reindex(30)] --> 
+
+```html  
+<div class="svelte-scrollprogress-container {position}" style:--ssp-background={background}>  <!-- [tl! reindex(30)] -->
 	<div
 		class="svelte-scrollprogress {position}" 
 		style:--ssp-color={color}
