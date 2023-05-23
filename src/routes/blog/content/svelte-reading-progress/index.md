@@ -1,12 +1,12 @@
 ---
 title: Creating a reading progress indicator in Svelte
 description: A little write up about how to create a reading progress indicator for Svelte
-date: 2022-07-06
-updated: 2023-05-21
+date: 2023-05-21
 excerpt: A little write up about how to create a reading progress indicator for Svelte
 image: https://ik.imagekit.io/kudadam/blog/svelte-reading-progress/hero
 tags:
   - svelte
+draft: true
 ---
 
 <script lang="ts">
