@@ -11,7 +11,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
 		"@kudadam/remark-torchlight": "^0.0.2",
@@ -29,6 +30,7 @@
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-svelte": "^2.29.0",
 		"html-minifier": "^4.0.0",
+		"lint-staged": "^13.2.2",
 		"md-attr-parser": "^1.3.0",
 		"mdsvex": "^0.10.6",
 		"postcss": "^8.4.23",
@@ -54,5 +56,9 @@
 		"vite": "^4.3.8",
 		"vitest": "^0.31.1"
 	},
-	"type": "module"
+	"type": "module",
+	"lint-staged": {
+		"*.{js,svelte}": "eslint --cache --fix",
+		"*.{js,css,md,svelte,ts}": "prettier --write"
+	}
 }
