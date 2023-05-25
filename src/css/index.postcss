@@ -1,8 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap'); */
 /* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=360&minRatio=1.125&maxFontSize=18&maxWidth=1536&maxRatio=1.2&steps=base%2Ch5%2Ch4%2Ch3%2Ch2%2Ch1&baseStep=base&prefix=font-size&decimals=2&useRems=on&previewFont=Inter */
 
-@import "./prose-marginCollapse.postcss";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -48,8 +46,17 @@
     }
 
     :--heading {
-        @apply font-black leading-tighter;
+        @apply font-black leading-tighter mt-[1.5em] mb-[0.2em];
     }
+
+    :--heading + :is(p){
+        @apply mt-0
+    }
+
+    p {
+        @apply my-[1.5em];
+    }
+
 
     ul {
 		list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FD3026' width='10' height='10' viewBox='0 0 448 512'%3E%3C!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M245.8 45.9C241.9 37.4 233.4 32 224 32s-17.9 5.4-21.8 13.9L142.7 174.7 13.9 234.2C5.4 238.1 0 246.6 0 256s5.4 17.9 13.9 21.8l128.8 59.5 59.5 128.8c3.9 8.5 12.4 13.9 21.8 13.9s17.9-5.4 21.8-13.9l59.5-128.8 128.8-59.5c8.5-3.9 13.9-12.4 13.9-21.8s-5.4-17.9-13.9-21.8L305.3 174.7 245.8 45.9z'/%3E%3C/svg%3E");
@@ -71,6 +78,10 @@
 
     img {
         @apply w-full h-auto;
+    }
+
+    input {
+        @apply w-full;
     }
 
     thead {
@@ -111,6 +122,7 @@
     .border-color {
         @apply border-gray-300;
     }
+
 }
 
 .mermaid-diagram {
@@ -124,6 +136,7 @@
 }
 
 .code-block-wrapper {
+    @apply my-[32px];
     --header-colour: #191A21;
     --editor-bg: #282A36;
     & .code-block-title {
