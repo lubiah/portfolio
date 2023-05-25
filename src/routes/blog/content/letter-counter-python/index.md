@@ -9,9 +9,8 @@ tags:
   - sololearn
 ---
 
-<!-- TODO: Add animation to this tutorial -->
 
-This blog post is about a problem I found on [Sololearn](https://www.sololearn.com). In this problem, you need to write a simple program. The program should take a group of text and return a dictionary. The dictionary should show how many times each letter appears in the text.
+This blog post is about a problem I found on [Sololearn](https://www.sololearn.com). In this problem, you need to write a simple program. The program should take a text and return a dictionary. The dictionary should show how many times each letter appears in the text.
 
 We'll write a Python function that takes a string and returns a dictionary with the number of times each letter appears.
 
@@ -25,27 +24,31 @@ def letter_counter(text):
     return dict
 ```
 
-So a function called `letter_counter` was created and it takes text as a parameter. Then inside the function, we create an empty dictionary called `dict`. Then on the next line, we iterate through all the characters in the `text` variable, we then include the current letter inside the `dict` dictionary. Then we use the `.count` method of the string class to find the number of occurrences of the current letter and assign it as the value of the letter in the dictionary. Then finally, we return the `dict` variable.
+We created a function `letter_counter` which accepts a string as its parameter. Inside the function, we create an empty dictionary called `dict`.
 
-## Testing the fuction
+In the next line, we iterate through all the characters in the `text` variable. We then use the current character in the loop as the key. Then we use the `.count` method of the string class to find the number of occurrences of the current letter and assign it as the value of the key (which is the current character).
+Then finally, we return the `dict` variable.
 
-So let's test the fuction we just created with this string "Lucretius is a great developer".
+## Testing the function
+
+So let's test the function we just created with this string `hello world`.
 
 ```python
-text = "Lucretius is a great developer"
+text = "hello world"
 print(letter_counter(text))
 ```
 
-```cmd
-{'L': 1, 'u': 2, 'c': 1, 'r': 3, 'e': 5, 't': 2, 'i': 2, 's': 2, ' ': 4, 'a': 2, 'g': 1, 'd': 1, 'v': 1, 'l': 1, 'o': 1, 'p': 1}
-
-[Program finished]
+```shell {no_frame=true}
+{'h': 1, 'e': 1, 'l': 3, 'o': 2, ' ': 1, 'w': 1, 'r': 1, 'd': 1}  #[tl! reindex(null)]
 ```
 
 The function works fine, but there is one minor issue.
-If you carefully examine the output, you will notice that the function found the number of occurrences for whitespaces, whitespaces are not letters, so let us modify our function to exclude whitespaces.
+If you carefully examine the output, you will notice that the function found the number of occurrences for whitespaces, whitespaces are not letters.
+
 
 ## Modified Code
+
+Let's modify the code so that it only counts only letters.
 
 ```python
 from string import ascii_letters
@@ -57,7 +60,6 @@ def letter_counter(text):
     return dict
 ```
 
-If you wewre to run the function, you would realise that it excludes all non-letters from the dictionary.
+If you re-run the function, you will realise it excludes all non-letters from the dictionary.
 
-What we did was to import the `ascii_letters` constant from the string module, then before adding a character to the `dict` variable, we check if the current character is included in the letters constant. if it is, we add it, meaning it's a letter. Else, we exclude it.
-Happy Coding :smile:
+We imported the `ascii_letters` constant from the string module. Then before adding a character to the `dict` variable, we check if the current character is in the letters constant. If it is, we add it, meaning it's a letter. Else, we exclude it.
