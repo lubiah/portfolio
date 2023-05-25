@@ -7,7 +7,11 @@ const plugin = () => (tree)=>{
 
         const { filename, filepath, no_frame } = (parser(node.meta ?? "")).prop;
 
-        if (no_frame) return;
+        if (no_frame) {
+            let main =  { type: 'div', data: { hProperties: { class: 'code-block-wrapper' } },children: [node]}
+            parent.children[index] = main;
+            return;
+        }
         const lang = node.lang;
 
         const titleBar = makeTitleBar(lang);
