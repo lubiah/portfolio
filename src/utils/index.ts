@@ -46,5 +46,9 @@ export const encodeHtml = (string: string): string => {
  * @param ms The number of milliseconds to sleep.
  * @returns A Promise that resolves after the specified time has elapsed.
  */
-export const sleep = (ms: number): Promise<void> =>
-  new Promise(resolve => setTimeout(resolve, ms));
+export const sleep = (ms: number): Promise<void> => {
+  if (ms < 0) {
+    return Promise.resolve();
+  }
+  return new Promise(resolve => setTimeout(resolve, ms));
+};
