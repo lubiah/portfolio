@@ -1,5 +1,5 @@
 ---
-title: How to Make a Letter Counter in Python
+title: How to make a letter counter in Python
 description: Learn how to write a simple programme that counts the number of times each letter appears in a string
 image: https://ik.imagekit.io/kudadam/blog/letter-counter-python/hero
 excerpt: Learn how to write a simple programme that counts the number of times each letter appears in a string
