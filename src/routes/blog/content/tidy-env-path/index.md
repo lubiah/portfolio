@@ -38,7 +38,7 @@ This can affect the performance of your computer. When you execute a command the
 
 ## Cleaning it up...
 
-We are going to create a simple Ruby script which will iterate through all the paths in the environment `PATH` variable and remove the dead links. 
+We are going to create a simple Ruby script which will iterate through all the paths in the environment variable `PATH` and remove the dead links. 
 In Ruby, all your environment variables are available under a single object called `ENV`. 
 Use the code below to see all the environment variables in Ruby.
 
