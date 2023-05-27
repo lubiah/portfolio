@@ -1,7 +1,6 @@
-import type { Config } from "tailwindcss";
-import colors from "tailwindcss/colors";
+import type { Config } from 'tailwindcss';
+import colors from 'tailwindcss/colors';
 const config = {
-
 	content: ['./src/**/*.{html,js,svelte,ts,md}'],
 
 	theme: {
@@ -41,7 +40,33 @@ const config = {
 				900: '#7A0000',
 				950: '#560000'
 			},
-			gray: colors.neutral	
+			gray: colors.neutral,
+			info: {
+				50: '#F1F5FE',
+				100: '#E3EBFC',
+				200: '#C2D4F9',
+				300: '#9DB9F6',
+				400: '#6E98F2',
+				500: '#2563EB',
+				600: '#1555E0',
+				700: '#124AC4',
+				800: '#0F3C9F',
+				900: '#0A2B70',
+				950: '#09235D'
+			},
+			warning: {
+				50: '#fffbeb',
+				100: '#fef3c7',
+				200: '#fde68a',
+				300: '#fcd34d',
+				400: '#fbbf24',
+				500: '#f59e0b',
+				600: '#d97706',
+				700: '#b45309',
+				800: '#92400e',
+				900: '#78350f',
+				950: '#451a03'
+			}
 		},
 		extend: {
 			lineHeight: {
