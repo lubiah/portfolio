@@ -7,9 +7,7 @@ const config = {
 		require('tailwindcss/nesting'),
 		postcssPresetEnv({
 			stage: 1,
-			features: {
-				'nesting-rules': false
-			}
+			
 		}),
 		//Some plugins, like tailwindcss/nesting, need to run before Tailwind,
 		tailwindcss(),
