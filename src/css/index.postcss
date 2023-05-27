@@ -139,6 +139,34 @@
 
 }
 
+.note {
+	@apply border-l-4 p-2 rounded-sm flex flex-col gap-y-2 tablet:flex-row tablet:relative my-[1.7rem] tablet:pl-6 tablet:pt-6;
+
+	& .content {
+		& :first-child {
+			@apply py-0 my-0;
+		}
+	}
+
+	& .icon {
+		@apply tablet:absolute tablet:top-0 tablet:left-0 tablet:bg-white tablet:rounded-full tablet:translate-x-[-50%] tablet:translate-y-[-50%] tablet:p-2;
+	}
+}
+
+.note--warning {
+	@apply border-warning-500 bg-warning-50;
+
+	& .icon svg path {
+		@apply stroke-warning-600;
+	}
+}
+
+.note--info {
+	@apply bg-info-50 border-info-500;
+
+
+}
+
 .mermaid-diagram {
     @apply border p-1 rounded;
     & .mermaid-controls {
