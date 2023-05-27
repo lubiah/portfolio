@@ -3,6 +3,7 @@ title: Migrating my blog page hits to CountAPI
 description: I migrated the page hits data for my website to CountAPI
 image: https://ik.imagekit.io/kudadam/blog/countapi-page-hit-counts/hero?updatedAt=1682204823721
 date: 2022-03-12
+draft: true
 excerpt: I migrated the page hits data for my website to CountAPI
 tags:
   - javascript
