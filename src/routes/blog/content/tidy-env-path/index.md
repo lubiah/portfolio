@@ -9,7 +9,14 @@ tags:
   - windows
 ---
 
-The more you install and uninstall software, the more your environment path gets filled with dead paths. Just now, I was fidgeting with my environment path when I found that it was dirty. Dirty as in the sense that I found dead path links inside my environment path. So, I decided to clean it.
+The more you install and uninstall software, the more your environment variable gets filled with dead paths.
+
+Just now, I was fidgeting with my environment variable when I found that it was dirty. Dirty as in the sense that I found dead path links inside my environment variable. So, I decided to clean it.
+
+<figure>
+  <img src="https://ik.imagekit.io/kudadam/blog/tidy-env-path/example_of_dead_path.jpg" alt="An example of a dead path in my environment variables">
+  <figcaption>I uninstalled <a href="https://hyper.is/" target="_blank">Hyper terminal</a> a long time ago but its path is still in my environment variable</figcaption>
+</figure>
 
 ## What is Environment Variable
 
@@ -21,7 +28,7 @@ To explain further, an environment variable simple contains values which help pr
 
 So, the path environment variable is one of the many available environment variables, it is used by the system to locate the needed executable from the command line. So basically, when we type any command such as `dir` or `move` or `time`, the terminal will search through the paths in the environment variable path, to locate the needed executable file, if it does not find it, then it returns an error.
 
-## How does it become _dirty?_
+## How does it become dirty?
 
 Whenever we install software that comes along with an executable CLI, its path is added to the environment variable path to allow you to access the executable from wherever you are, however, when you uninstall the application, the added path is not removed from your environment variable, so the installing and uninstalling of software will make it end up with a chunk of dead paths, this doesn't affect your computer at all just that, it's better to keep everything clean and prevent your system from looking through dead file paths
 
@@ -70,6 +77,6 @@ Then we iterate through the valid array and add each item + ';' to the `valid_st
 
 In the next part, we open the registry and access the environment, we then assign our new environment variable.
 
-:::note{type=info}
+:::info
 You need to restart your computer to see the changes
 :::
