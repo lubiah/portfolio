@@ -12,7 +12,7 @@ tags:
 
 The more you install and uninstall software, the more your environment variable gets filled with dead paths.
 
-Just now, I was fidgeting with my environment variable when I found that it was dirty. Dirty as in the sense that I found dead path links inside my environment variable. So, I decided to clean it.
+Just now, while I was fidgeting with my environment variable, I found some dead path links inside it. So, I decided to clean it up.
 
 <figure>
   <img src="https://ik.imagekit.io/kudadam/blog/tidy-env-path/example_of_dead_path.jpg" alt="An example of a dead path in my environment variables">
