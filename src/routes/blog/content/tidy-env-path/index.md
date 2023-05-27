@@ -10,7 +10,7 @@ tags:
   - windows
 ---
 
-The more you install and uninstall software, the more your environment variable gets filled with dead paths.
+The more you install and uninstall software, the more your environment variables gets filled with dead paths.
 
 Just now, while I was looking through my environment variables for no apparent reason, I found some dead links. So, I decided to clean them up.
 
