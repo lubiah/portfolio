@@ -32,7 +32,7 @@ It is used by the system to locate the needed executable from the command line. 
 
 ## How does it get filled with dead paths?
 
-Whenever we install software that comes along with an executable CLI, its path is added to the environment variable `PATH` to allow you to access the executable from wherever you are, however, when you uninstall the application, the added path is not removed from your environment variable, so the installing and uninstalling of software will make it end up with a chunk of dead paths.
+Whenever we install software that comes along with an executable CLI, its path is added to the environment variable `PATH` to allow you to access the executable from wherever you are. However, when you uninstall the application, the added path is not removed from your environment variable, so the installing and uninstalling of software will make it end up with a chunk of dead paths.
 
 This can affect the performance of your computer. When you execute a command the operating system searches through the paths listed in the `PATH` variable until it finds the executable. If there's many dead paths, the search can take longer.
 
@@ -47,8 +47,9 @@ require "pp"
 pp ENV
 ```
 
-This will print the environment variables plus their values
-The actual code is below.
+This will print the environment variables plus their values.
+
+The code for the script is below.
 
 ```ruby
 require "win32/registry"
@@ -77,7 +78,7 @@ Then we split it by ';' since all the paths in the variable are concatenated and
 We then created a new array called `valid` (_this is the array which will hold the valid paths_).
 The `valid_string` variable will also hold the stringified version of the valid array.
 Then to the iteration, we iterate through each item in the `paths` array, and then we use `Dir.exists?` to check if the path exists, if it does, it is added to the valid array.
-Then we iterate through the valid array and add each item + ';' to the `valid_string` variable.
+Then we iterate through the `valid` array and add each path to the `valid_string` variable.
 
 In the next part, we open the registry and access the environment, we then assign our new environment variable.
 
