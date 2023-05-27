@@ -28,7 +28,7 @@ To explain further, an environment variable simply contains values which help pr
 ## The Path Environment Variable
 
 The `PATH` environment variable is one of the many available environment variables.
-It is used by the system to locate the needed executable from the command line. So basically, when we type any command such as `dir` or `move` or `time`, the terminal will search through the paths in the environment variable `PATH` to locate the needed executable file, if it does not find it, then it returns the 'not recognized' error.
+It is used by the system to locate the needed executable from the command line. So basically, when we type any command such as `dir` or `move` or `time`, the operating system will search through the paths in the environment variable `PATH` to locate the needed executable file, if it does not find it, then it returns the 'not recognized' error.
 
 ## How does it get filled with dead paths?
 
