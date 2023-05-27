@@ -23,7 +23,7 @@ Just now, while I was fidgeting with my environment variable, I found some dead 
 
 > An environment variable is a dynamic-named value that can affect the way running processes will behave on a computer. They are part of the environment in which a process runs. For example, a running process can query the value of the TEMP environment variable to discover a suitable location to store temporary files, or the HOME or USERPROFILE variable to find the directory structure owned by the user running the process
 
-To explain further, an environment variable simply contains values which help processes to function. For example, to find the directory in which software is installed, you would refer to the `PROGRAMFILES` environmental variable which contains the path to the `Program Files` directory or to find your operating system's temporary directory, you would refer to the `TEMP` variable which contains the path to the system's temporary directory. Environmental variables can also store other information such as your computer's username or processor type.
+To explain further, an environment variable simply contains values which help processes to function. For example, to find the directory in which software is installed, you would refer to the `PROGRAMFILES` environmental variable which contains the path to the `Program Files` directory or to find your operating system's temporary directory, you would refer to the `TEMP` variable which contains the path to the operating system's temporary directory. Environmental variables can also store other information such as your computer's username or processor type.
 
 ## The Path Environment Variable
 
