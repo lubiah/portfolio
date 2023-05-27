@@ -3,6 +3,7 @@ title: Clean up your environment variables with a simple Ruby script
 description: How to use Ruby to create a program to remove dead paths from your environment variable
 image: https://ik.imagekit.io/kudadam/blog/tidy-env-path/hero?updatedAt=1685056694143
 excerpt: The more you install and uninstall softwares, the more your environment get filled with dead paths. Learn how to remove them
+draft: true
 date: 2021-05-27
 tags:
   - ruby
@@ -22,20 +23,23 @@ Just now, I was fidgeting with my environment variable when I found that it was 
 
 > An environment variable is a dynamic-named value that can affect the way running processes will behave on a computer. They are part of the environment in which a process runs. For example, a running process can query the value of the TEMP environment variable to discover a suitable location to store temporary files, or the HOME or USERPROFILE variable to find the directory structure owned by the user running the process
 
-To explain further, an environment variable simple contains values which help processes to function. For example, to find the directory in which software is installed, you would refer to the `PROGRAMFILES` environmental variable which contains the path to the `Program Files` directory OR to find your operating system's temporary directory, you would refer to the `TEMP` variable which contains the path to the system's temporary directory. Environmental variables can also store other information such as your computer's username or processor type.
+To explain further, an environment variable simple contains values which help processes to function. For example, to find the directory in which software is installed, you would refer to the `PROGRAMFILES` environmental variable which contains the path to the `Program Files` directory or to find your operating system's temporary directory, you would refer to the `TEMP` variable which contains the path to the system's temporary directory. Environmental variables can also store other information such as your computer's username or processor type.
 
 ## The Path Environment Variable
 
-So, the path environment variable is one of the many available environment variables, it is used by the system to locate the needed executable from the command line. So basically, when we type any command such as `dir` or `move` or `time`, the terminal will search through the paths in the environment variable path, to locate the needed executable file, if it does not find it, then it returns an error.
+The `PATH` environment variable is one of the many available environment variables.
+It is used by the system to locate the needed executable from the command line. So basically, when we type any command such as `dir` or `move` or `time`, the terminal will search through the paths in the environment variable `PATH` to locate the needed executable file, if it does not find it, then it returns the 'not recognized' error.
 
-## How does it become dirty?
+## How does it get filled with dead paths?
 
-Whenever we install software that comes along with an executable CLI, its path is added to the environment variable path to allow you to access the executable from wherever you are, however, when you uninstall the application, the added path is not removed from your environment variable, so the installing and uninstalling of software will make it end up with a chunk of dead paths, this doesn't affect your computer at all just that, it's better to keep everything clean and prevent your system from looking through dead file paths
+Whenever we install software that comes along with an executable CLI, its path is added to the environment variable `PATH` to allow you to access the executable from wherever you are, however, when you uninstall the application, the added path is not removed from your environment variable, so the installing and uninstalling of software will make it end up with a chunk of dead paths.
+
+This can affect the performance of your computer. When you execute a command the operating system searches through the paths listed in the `PATH` variable until it finds the executable. If there's many dead paths, the search can take longer.
 
 ## Cleaning it up...
 
-We are going to create a simple Ruby script which will iterate through all the paths in the environment path variable and remove the dead links. 
-In Ruby, all your environment variables are available under a single object called ENV. 
+We are going to create a simple Ruby script which will iterate through all the paths in the environment `PATH` variable and remove the dead links. 
+In Ruby, all your environment variables are available under a single object called `ENV`. 
 Use the code below to see all the environment variables in Ruby.
 
 ```ruby
