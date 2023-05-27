@@ -77,7 +77,7 @@ First of all, we imported the 'registry' module. Then we assigned the environmen
 Then we split it by ';' since all the paths in the variable are concatenated and separated by ';'. This will turn the `paths` variable into an array.
 We then created a new array called `valid` (_this is the array which will hold the valid paths_).
 The `valid_string` variable will also hold the stringified version of the `valid` array.
-Then to the iteration, we iterate through each item in the `paths` array, and then we use `Dir.exists?` to check if the path exists, if it does, it is added to the valid array.
+Then to the iteration, we iterate through each item in the `paths` array, and then we use `Dir.exists?` to check if the path exists, if it does, it is added to the `valid` array.
 Then we iterate through the `valid` array and add each path to the `valid_string` variable.
 
 In the next part, we open the registry and access the environment, we then assign our new environment variable.
