@@ -34,7 +34,7 @@ It is used by the system to locate the needed executable from the command line. 
 
 Whenever we install software that comes along with an executable CLI, its path is added to the environment variable `PATH` to allow you to access the executable from wherever you are. However, when you uninstall the application, the added path is not removed from your environment variable, so the installing and uninstalling of software will make it end up with a chunk of dead paths.
 
-This can affect the performance of your computer. When you execute a command the operating system searches through the paths listed in the `PATH` variable until it finds the executable. If there's many dead paths, the search can take longer.
+This can affect the performance of your computer. When you execute a command the operating system searches through the paths listed in the `PATH` variable until it finds the executable. If there are many dead paths, the search can take longer.
 
 ## Cleaning it up...
 
