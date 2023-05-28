@@ -1,7 +1,7 @@
 ---
 title: How to create a search engine in JavaScript
 description: Make a simple search engine using only html and client-side JavaScript, no backend needed
-image: https://ik.imagekit.io/kudadam/blog/search_tool_html_javascript/hero.jpg
+image: https://ik.imagekit.io/kudadam/blog/search-engine-javascript/hero
 excerpt: Learn how to make a simple search tool for your website in HTML and JavaScript
 category: programming
 keywords:
