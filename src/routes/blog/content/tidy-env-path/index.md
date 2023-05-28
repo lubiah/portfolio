@@ -1,7 +1,7 @@
 ---
 title: Clean up your environment variables with a simple Ruby script
 description: How to use Ruby to create a program to remove dead paths from your environment variable
-image: https://ik.imagekit.io/kudadam/blog/tidy-env-path/hero?updatedAt=1685056694143
+image: https://ik.imagekit.io/kudadam/blog/tidy-env-path/hero
 excerpt: The more you install and uninstall softwares, the more your environment get filled with dead paths. Learn how to remove them
 draft: true
 date: 2021-05-27
