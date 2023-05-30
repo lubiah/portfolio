@@ -34,8 +34,8 @@ const plugin = () =>  async (tree,file) =>{
                 });
                 mermaidSvg = fs.readFileSync(outputFile,'utf-8');
                 Cache.cacheResults(key,mermaidSvg);
-                if (fs.existsSync(tempFile.toString())) fs.unlinkSync(tempFile.toString());
-                if (fs.existsSync(outputFile.toString()) )fs.unlinkSync(outputFile.toString());
+                // if (fs.existsSync(tempFile.toString())) fs.unlinkSync(tempFile.toString());
+                // if (fs.existsSync(outputFile.toString()) )fs.unlinkSync(outputFile.toString());
             }
             
             else {
