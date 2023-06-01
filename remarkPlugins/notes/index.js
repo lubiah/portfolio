@@ -1,7 +1,7 @@
 import { visit } from 'unist-util-visit';
 import icons from './icons.js';
 
-const NOTES_NAMES = ['info'];
+const NOTES_NAMES = ['info', 'warning'];
 
 const plugin = () => {
 	return (tree) => {

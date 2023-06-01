@@ -13,6 +13,15 @@ const info = {
     `
 };
 
+const warning = {
+    type: 'html',
+    value: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 12V17M3.59601 21.5014C2.44134 23.5014 3.88534 26 6.19334 26H25.8067C28.1133 26 29.5573 23.5014 28.404 21.5014L18.5987 4.50403C17.444 2.50403 14.556 2.50403 13.4013 4.50403L3.59601 21.5014ZM16 21H16.0093V21.0107H16V21Z" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    `
+}
+
 export default {
-	info
+	info,
+    warning
 };
