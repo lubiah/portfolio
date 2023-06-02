@@ -3,6 +3,7 @@ import { run } from "@mermaid-js/mermaid-cli";
 import fs from "fs";
 import { tmpdir } from "os";
 import path from "path";
+import { randomWord } from "./utils.js"
 import FileCache from "./cache.js";
 
 
@@ -24,20 +25,16 @@ const plugin = () =>  async (tree,file) =>{
             const cached = Cache.getCachedResults(key);
             let mermaidSvg;
             if (!cached){
-
-                if (!fs.existsSync(tmpdir())) fs.mkdirSync(tmpdir())
-                const tempFile = path.join(tmpdir(),'temporary.mmd');
-                const outputFile = path.join(tmpdir(),'temporary.svg');
-                fs.writeFileSync(tempFile,value,{
-                    flag: 'w'
-                });
+                const tempFile = path.join(tmpdir(),`${randomWord()}.mmd`);
+                const outputFile = path.join(tmpdir(),`${randomWord()}.svg`);
+                fs.writeFileSync(tempFile,value);
                 await run(tempFile, outputFile,{
                     puppeteerConfig: {
                         args: ['--no-sandbox', '--disable-setuid-sandbox']
                     }
                 });
+                
                 mermaidSvg = fs.readFileSync(outputFile,'utf-8');
-                console.log(tmpdir())
                 Cache.cacheResults(key,mermaidSvg);
                 fs.unlinkSync(tempFile.toString());
                 fs.unlinkSync(outputFile.toString());
