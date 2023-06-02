@@ -1,7 +1,7 @@
 import { visit } from "unist-util-visit";
 import { run } from "@mermaid-js/mermaid-cli";
 import fs from "fs";
-import os from "os";
+import { tmpdir } from "os";
 import path from "path";
 import FileCache from "./cache.js";
 
@@ -24,18 +24,18 @@ const plugin = () =>  async (tree,file) =>{
             const cached = Cache.getCachedResults(key);
             let mermaidSvg;
             if (!cached){
-                const tempFile = path.join(os.tmpdir(),'temporary.mmd');
-                const outputFile = path.join(os.tmpdir(),'temporary.svg');
-                console.log(tempFile, value)
+                const tempFile = path.join(tmpdir(),'temporary.mmd');
+                const outputFile = path.join(tmpdir(),'temporary.svg');
                 fs.writeFileSync(tempFile,value,{
                     flag: 'w'
                 });
-                 await run(tempFile, outputFile,{
+                await run(tempFile, outputFile,{
                     puppeteerConfig: {
                         args: ['--no-sandbox', '--disable-setuid-sandbox']
                     }
                 });
                 mermaidSvg = fs.readFileSync(outputFile,'utf-8');
+                console.log(tmpdir())
                 Cache.cacheResults(key,mermaidSvg);
                 fs.unlinkSync(tempFile.toString());
                 fs.unlinkSync(outputFile.toString());
