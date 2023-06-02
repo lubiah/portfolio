@@ -26,7 +26,10 @@ const plugin = () =>  async (tree,file) =>{
             if (!cached){
                 const tempFile = path.join(os.tmpdir(),'temporary.mmd');
                 const outputFile = path.join(os.tmpdir(),'temporary.svg');
-                fs.writeFileSync(tempFile,value);
+                console.log(tempFile, value)
+                fs.writeFileSync(tempFile,value,{
+                    flag: 'w'
+                });
                  await run(tempFile, outputFile,{
                     puppeteerConfig: {
                         args: ['--no-sandbox', '--disable-setuid-sandbox']
