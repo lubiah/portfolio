@@ -36,7 +36,7 @@ B[Iterate through each file]
 C[Upload to ImageKit]
 ```
 
-The image above demonstrates how our programme will operate. We will first retrieve a list of all our images from Sirv, then iterate through all the files and upload it to ImageKit. It is quite simple.
+The diagram above demonstrates how our programme will operate. We will first retrieve a list of all our images from Sirv, then iterate through all the files and upload it to ImageKit. It is quite simple.
 
 **Getting list of files**
 
