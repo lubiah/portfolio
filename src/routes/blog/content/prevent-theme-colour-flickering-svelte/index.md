@@ -17,7 +17,7 @@ My theme colour used to flicker after the page had finished loading. Eventually,
 Initially, I used to change the theme colour of my website within the `onMount` function. However, the theme colour was always flickering. The cause of this was that the body loads before the `onMount` function sets the theme colour.
 
 <figure>
-	<img alt="How the screen was flickering before I found a solution" src="https://ik.imagekit.io/kudadam/blog/prevent-theme-colour-flickering-svelte/flickering.gif">
+	<img alt="How the screen was flickering before I found a solution" src="https://ik.imagekit.io/kudadam/blog/prevent-theme-colour-flickering-svelte/flickering.gif?" class="w-auto" height="500" width="500">
 	<figcaption>A gif showing the bug</figcaption>
 </figure>
 
@@ -51,6 +51,6 @@ Okay, so you can write this code in the component which you use to toggle betwee
 To access the head element, we used the `<svelte:head>` component. Next, we created the script tag just as we would on our normal HTML pages. In the following lines, we attempt to retrieve the theme from `localStorage`. If it’s not set, it defaults to the “light” theme. The next steps involve adding classes and setting the theme in `localStorage`. Finally, observe how the page loads without flickering.
 
 <figure>
-	<img alt="Now the page loads without flickering" src="https://ik.imagekit.io/kudadam/blog/prevent-theme-colour-flickering-svelte/non-flickering.gif">
+	<img alt="Now the page loads without flickering" src="https://ik.imagekit.io/kudadam/blog/prevent-theme-colour-flickering-svelte/non-flickering.gif?tr=w-500" class="w-auto" width="500" height="500">
 	<figcaption>Now the page doesn't flicker again</figcaption>
 </figure>
