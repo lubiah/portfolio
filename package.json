@@ -46,7 +46,7 @@
 		"remark-parse": "^10.0.2",
 		"remark-slug": "^7.0.1",
 		"shiki": "^0.14.2",
-		"svelte": "^3.59.1",
+		"svelte": "4.0.0-next.0",
 		"svelte-check": "^3.4.3",
 		"svelte-scrollprogress": "^1.0.6",
 		"svelte-seo": "^1.5.3",
