@@ -1,13 +1,8 @@
 ---
 title: Using multiples instance of CodeMirror in a file
 description: How to create many instances of CodeMirror with a simple function
-category: web-development
-excerpt: The default configuration for codemirror is somehow complicated, learn how you can simplify it.
-keywords:
-  - codemirror
-  - multiple instances of codemirror
-  - multiple codemirror
-  - simplifying codemirror
+excerpt: The default configuration for codemirror is somehow complicated, learn how you can simplify it
+image: https://ik.imagekit.io/kudadam/blog/instances-codemirror-in-file/hero
 date: 2021-03-30
 tags:
   - javascript
