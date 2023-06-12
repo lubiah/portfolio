@@ -10,7 +10,7 @@ tags:
   - svelte
 ---
 
-At first, the URL to my RSS feed was "kudadam.com/blog/feed" but later on, I decided to change it to "kudadam.com/blog/feed.xml". I had to make sure that those using the old URL still got access to the feed. For example, there's a link to my RSS feed on [Dave Rubert's website](https://daverupert.com/rss-club/), he uses the old URL.
+At first, the URL to my RSS feed was "/blog/feed" but later on, I decided to change it to "/blog/feed.xml". I had to make sure that those using the old URL still got access to the feed. For example, there's a link to my RSS feed on [Dave Rubert's website](https://daverupert.com/rss-club/), he uses the old URL.
 
 We are going to use [SvelteKit's hooks](https://kit.svelte.dev/docs/hooks) to achieve the redirect. The advantage of using hooks to make the redirect is that we can encapsulate all our redirects in one place. We will use the `handle` function which is available in SvelteKit's hooks. this function runs every time a request is made to our app so it's the best place to handle it. We will be using the server hook since the `handle` function isn't available in the client hook.
 
