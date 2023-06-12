@@ -1,0 +1,7 @@
+[
+    {
+        "from": "/blog/feed",
+        "to": "/blog/feed.xml",
+        "status": 301
+    }
+]
